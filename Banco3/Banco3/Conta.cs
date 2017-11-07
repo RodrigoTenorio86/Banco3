@@ -8,5 +8,12 @@ namespace Banco3
 {
     class Conta
     {
-    }
+        public static int Id { get; private set; }
+        public double Saldo { get; set; }
+
+        public Conta()
+        {
+            Conta.Id++;
+        }
+    };
 }
