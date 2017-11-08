@@ -9,7 +9,8 @@ namespace Banco3
     class ContaCorrente:Conta
     {
 
-
+        public ContaCorrente():base() { }
+        public ContaCorrente(Cliente titular):base(titular) { }
         public override bool Saca(double valor)
         {
             return base.Saca(valor + 0.1);

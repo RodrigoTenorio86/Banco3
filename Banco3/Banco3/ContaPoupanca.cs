@@ -8,5 +8,8 @@ namespace Banco3
 {
     class ContaPoupanca:Conta
     {
+        public ContaPoupanca():base()  { }
+        public ContaPoupanca(Cliente cliente) :base(cliente)  { }
+
     }
 }
