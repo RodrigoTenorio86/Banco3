@@ -35,6 +35,10 @@ namespace Banco3
 
         public override bool Equals(object obj)
         {
+            if(!(obj is Cliente))
+            {
+                return false;
+            }
             Cliente eu = (Cliente)obj;
             return this.cpf.Equals(eu.cpf);
         }

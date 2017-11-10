@@ -10,9 +10,9 @@ namespace Banco3
     {
         static void Main(string[] args)
         {
-            var conta = new Conta();
-            conta.Deposito(1000);
-            System.Console.WriteLine(conta.Saca(200));
+            var cc = new ContaCorrente();
+            cc.Deposito(1000);
+            System.Console.WriteLine(cc.Saca(200));
             System.Console.Read();
         }
     }

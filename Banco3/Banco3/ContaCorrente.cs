@@ -11,6 +11,12 @@ namespace Banco3
 
         public ContaCorrente():base() { }
         public ContaCorrente(Cliente titular):base(titular) { }
+
+        public override void Deposito(double valor)
+        {
+            this.Saldo += valor;
+        }
+
         public override bool Saca(double valor)
         {
             return base.Saca(valor + 0.1);

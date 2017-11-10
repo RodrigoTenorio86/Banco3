@@ -6,20 +6,16 @@ using System.Threading.Tasks;
 
 namespace Banco3
 {
-    class ContaPoupanca:Conta,ITributavel
+    class ContaInvestimento : Conta, ITributavel
     {
-        public ContaPoupanca():base()  { }
-        public ContaPoupanca(Cliente cliente) :base(cliente)  { }
-
         public double CalculaTributo()
         {
-            return this.Saldo * 0.02;
+            return this.Saldo * 0.03;
         }
 
         public override void Deposito(double valor)
         {
             this.Saldo += valor;
         }
-
     }
 }

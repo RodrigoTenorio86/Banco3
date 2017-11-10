@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Banco3
 {
-    class Conta
+    abstract class Conta
     {
-        public static int Id { get; private set; }
-        public double Saldo { get;private set; }
+        public static int Id {  get; private set; }
+        public double Saldo { get;protected set; }
         public Cliente Titular { get; private set; }
 
         public Conta()
@@ -33,11 +33,8 @@ namespace Banco3
             return consultar;
         }
 
-        public virtual void Deposito(double valor)
-        {
-            this.Saldo += valor;
-        }
-
+        public abstract void Deposito(double valor);
+        
         public virtual bool Transfere(double valor,Conta destino)
         {
             var consulta = this.Saca(valor);
@@ -47,6 +44,11 @@ namespace Banco3
             }
             return consulta;
             
+        }
+
+        public static int getNumeroConta()
+        {
+            return Conta.Id;
         }
         private bool SaldoSuficiente(double valor)
         {
@@ -58,6 +60,16 @@ namespace Banco3
             {
                 return false;
             }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if(!(obj is Conta))
+            {
+                return false;
+            }
+            Conta c = (Conta)obj;
+            return this.Titular.Equals(c.Titular);
         }
     };
 }
