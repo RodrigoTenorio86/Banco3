@@ -66,7 +66,7 @@ namespace Banco3
         {
             if(!(obj is Conta))
             {
-                return false;
+                  return false;
             }
             Conta c = (Conta)obj;
             return this.Titular.Equals(c.Titular);
